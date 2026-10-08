@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  /* M+ Museum Official Website Colour-Blocking Tokens */
+  --mplus-orange: #FB5616;
+  --mplus-pink: #F75388;
+  --mplus-blue: #11A1F0;
+  --mplus-white: #FFFFFF;
+  --mplus-black: #111111;
+  --mplus-border-light: rgba(255, 255, 255, 0.25);
+  --mplus-border-solid: #FFFFFF;
+
+  /* M+ Official Typography System Tokens */
+  /* Display Stack: Priority to M+ official brand font 'Simplistic' / 'Simplistic Digits and Latin' */
+  --font-display: 'Simplistic', 'Simplistic Digits and Latin', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Body Stack: Neutral, balanced contemporary museum reading sans-serif */
+  --font-body: 'Simplistic Digits and Latin', 'Simplistic', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Traditional Chinese Stack: Official M+ Noto Sans TC pairing */
+  --font-chinese: 'Noto Sans TC', 'PingFang TC', 'Hiragino Sans TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
+
+  /* Monospace / Metadata Stack */
+  --font-mono: ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Official M+ Website 'Simplistic' Webfont Declarations */
+@font-face {
+  font-family: 'Simplistic';
+  src: url('/fonts/SimplisticMplus-Normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simplistic';
+  src: url('/fonts/SimplisticMplus-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simplistic';
+  src: url('/fonts/SimplisticMplus-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Official M+ Website 'Simplistic Digits and Latin' Webfont Declarations */
+@font-face {
+  font-family: 'Simplistic Digits and Latin';
+  src: url('/fonts/SimplisticMplus-Normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+00??, U+2010, U+2013, U+2014, U+2015, U+2016, U+2018, U+2019, U+201a, U+201c, U+201d, U+201e, U+2020, U+2021, U+2022, U+2025, U+2026, U+2030, U+2031, U+2032, U+2033, U+2034, U+2035, U+2039, U+203a, U+203e, U+2041, U+2043, U+2044, U+204f, U+2057, U+20ac, U+20db, U+20dc, U+2102, U+2105, U+2116, U+2117, U+2122, U+2153, U+2154, U+2155, U+2156, U+2157, U+2158, U+2159, U+215a, U+215b, U+215c, U+215d, U+215e, U+2212, U+2213, U+2214, U+2216, U+2217;
+}
+
+@font-face {
+  font-family: 'Simplistic Digits and Latin';
+  src: url('/fonts/SimplisticMplus-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+00??, U+2010, U+2013, U+2014, U+2015, U+2016, U+2018, U+2019, U+201a, U+201c, U+201d, U+201e, U+2020, U+2021, U+2022, U+2025, U+2026, U+2030, U+2031, U+2032, U+2033, U+2034, U+2035, U+2039, U+203a, U+203e, U+2041, U+2043, U+2044, U+204f, U+2057, U+20ac, U+20db, U+20dc, U+2102, U+2105, U+2116, U+2117, U+2122, U+2153, U+2154, U+2155, U+2156, U+2157, U+2158, U+2159, U+215a, U+215b, U+215c, U+215d, U+215e, U+2212, U+2213, U+2214, U+2216, U+2217;
+}
+
+@font-face {
+  font-family: 'Simplistic Digits and Latin';
+  src: url('/fonts/SimplisticMplus-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+00??, U+2010, U+2013, U+2014, U+2015, U+2016, U+2018, U+2019, U+201a, U+201c, U+201d, U+201e, U+2020, U+2021, U+2022, U+2025, U+2026, U+2030, U+2031, U+2032, U+2033, U+2034, U+2035, U+2039, U+203a, U+203e, U+2041, U+2043, U+2044, U+204f, U+2057, U+20ac, U+20db, U+20dc, U+2102, U+2105, U+2116, U+2117, U+2122, U+2153, U+2154, U+2155, U+2156, U+2157, U+2158, U+2159, U+215a, U+215b, U+215c, U+215d, U+215e, U+2212, U+2213, U+2214, U+2216, U+2217;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body), var(--font-chinese);
+  background-color: #000000;
+  color: var(--mplus-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Traditional Chinese active typography adjustments */
+[lang="tc"],
+.lang-tc {
+  font-family: var(--font-body), var(--font-chinese);
+}
+
+[lang="tc"] h1,
+[lang="tc"] h2,
+[lang="tc"] h3,
+.lang-tc h1,
+.lang-tc h2,
+.lang-tc h3 {
+  font-family: var(--font-chinese), var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+/* Latin Display Typography */
+.mplus-display {
+  font-family: var(--font-display), var(--font-chinese);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+/* Compact Institutional Metadata & Labels */
+.mplus-metadata {
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+/* Subtle architectural LED louvre pattern reminiscent of Herzog & de Meuron M+ Facade */
+.mplus-facade-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 6px
+  );
+}
+
+.mplus-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Custom M+ Color-Blocking Utility Classes */
+.bg-mplus-orange { background-color: var(--mplus-orange); }
+.bg-mplus-pink { background-color: var(--mplus-pink); }
+.bg-mplus-blue { background-color: var(--mplus-blue); }
+.bg-mplus-white { background-color: var(--mplus-white); }
+.bg-mplus-black { background-color: var(--mplus-black); }
+
+.text-mplus-orange { color: var(--mplus-orange); }
+.text-mplus-pink { color: var(--mplus-pink); }
+.text-mplus-blue { color: var(--mplus-blue); }
+
+.border-mplus-orange { border-color: var(--mplus-orange); }
+.border-mplus-pink { border-color: var(--mplus-pink); }
+.border-mplus-blue { border-color: var(--mplus-blue); }
+
+/* Custom scrollbar for clean institutional aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+

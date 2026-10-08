@@ -1,0 +1,8 @@
+{
+  "name": "M+ Moments | 5th Anniversary Campaign - 08-10",
+  "description": "Official campaign microsite for M+ Museum 5th Anniversary. Share your photograph and memory from M+ and West Kowloon Art Park to be featured on the M+ Facade.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
