@@ -69,11 +69,16 @@ export const SuccessState: React.FC<SuccessStateProps> = ({ t, record, onReset }
 
               <div>
                 <span className="block text-[11px] mplus-metadata text-neutral-600 font-bold">
-                  {t.success.thematicSection}
+                  {t.success.registeredMobile}
                 </span>
-                <span className="text-sm font-bold text-neutral-900 mt-0.5 block">
-                  {record.thematicSection}
-                </span>
+                <div className="flex items-center space-x-2 mt-1">
+                  <span className="text-lg font-black mplus-display tracking-wider block">
+                    {record.countryCode} {record.mobileNumber}
+                  </span>
+                  <span className="text-[10px] mplus-metadata bg-black text-white px-2 py-0.5 font-bold">
+                    Verified ✓
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -98,29 +103,15 @@ export const SuccessState: React.FC<SuccessStateProps> = ({ t, record, onReset }
 
               <div>
                 <span className="block text-[11px] mplus-metadata text-neutral-600 font-bold">
-                  {t.success.registeredMobile}
-                </span>
-                <div className="flex items-center space-x-2 mt-1">
-                  <span className="text-lg font-black mplus-display tracking-wider block">
-                    {record.countryCode} {record.mobileNumber}
-                  </span>
-                  <span className="text-[10px] mplus-metadata bg-black text-white px-2 py-0.5 font-bold">
-                    Verified ✓
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b-2 border-neutral-200">
-              <div>
-                <span className="block text-[11px] mplus-metadata text-neutral-600 font-bold">
                   {t.success.timestamp}
                 </span>
                 <span className="text-xs font-bold text-neutral-800 mt-1 block">
                   {formattedDate}
                 </span>
               </div>
+            </div>
 
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b-2 border-neutral-200">
               <div>
                 <span className="block text-[11px] mplus-metadata text-neutral-600 font-bold">
                   Status
@@ -130,6 +121,17 @@ export const SuccessState: React.FC<SuccessStateProps> = ({ t, record, onReset }
                   <span>Verified & queued for review</span>
                 </span>
               </div>
+
+              {record.thematicSection ? (
+                <div>
+                  <span className="block text-[11px] mplus-metadata text-neutral-600 font-bold">
+                    {t.success.thematicSection}
+                  </span>
+                  <span className="text-xs font-bold text-neutral-800 mt-1 block">
+                    {record.thematicSection}
+                  </span>
+                </div>
+              ) : null}
             </div>
 
             {/* Submitted Photo & Memory Preview */}

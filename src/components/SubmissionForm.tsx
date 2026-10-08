@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Translations } from '../locales/translations';
 import { CampaignConfig, Language, SubmissionRecord } from '../types/campaign';
-import { COUNTRY_CODES, THEMATIC_SECTIONS, isMobileNumberRegistered } from '../config/campaignConfig';
+import { COUNTRY_CODES, isMobileNumberRegistered } from '../config/campaignConfig';
 import { ImageUploader } from './ImageUploader';
 import { ImagePreview } from './ImagePreview';
 
@@ -36,7 +36,6 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
 
   // Participant details
   const [fullName, setFullName] = useState('');
-  const [thematicSection, setThematicSection] = useState(THEMATIC_SECTIONS[0].label);
   const [message, setMessage] = useState('');
   const [countryCode, setCountryCode] = useState('+852');
   const [mobileNumber, setMobileNumber] = useState('');
@@ -154,12 +153,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
       newErrors.fullName = t.validation.nameRequired;
     }
 
-    // 2. Validate thematic section
-    if (!thematicSection) {
-      newErrors.thematicSection = t.validation.thematicRequired;
-    }
-
-    // 3. Validate image
+    // 2. Validate image
     if (!selectedImage) {
       newErrors.image = t.validation.imageRequired;
     }
@@ -233,7 +227,6 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
       const submissionRecord: SubmissionRecord = {
         submissionId: refCode,
         fullName: fullName.trim(),
-        thematicSection,
         imageName: selectedImage?.file.name || 'photo.jpg',
         imageSize: selectedImage?.file.size || 0,
         imageDimensions: selectedImage?.dimensions || { width: 1920, height: 1080, aspectRatio: 1.77 },
@@ -331,7 +324,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
         <div className="flex items-center space-x-2">
           <span className="w-2 h-2 bg-[#FB5616] inline-block shrink-0" />
           <span className="font-bold">
-            04 / Submission · Share your moment
+            04 / Submission
           </span>
         </div>
 
@@ -396,65 +389,8 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
         {/* Form Container */}
         <form onSubmit={handleSubmit} noValidate className="space-y-12">
           
-          {/* THEMATIC SECTION DROPDOWN */}
-          <div id="field-thematicSection" className="space-y-3">
-            <div className="flex items-center justify-between">
-              <label htmlFor="thematic-select" className={`text-xs mplus-metadata font-black ${currentTheme.label} flex items-center space-x-2`}>
-                <span className={`w-2 h-2 ${currentTheme.dot} inline-block`} />
-                <span>{t.form.thematicLabel}</span>
-                <span className="font-mono text-sm">*</span>
-              </label>
-              <span className={`text-xs mplus-metadata ${currentTheme.metaStrip} font-bold`}>
-                M+ 5th anniversary themes
-              </span>
-            </div>
-
-            {/* Custom Styled Thematic Selector Box */}
-            <div className="relative border-2 border-black bg-black text-white shadow-xl">
-              <select
-                id="thematic-select"
-                value={thematicSection}
-                onChange={(e) => {
-                  setThematicSection(e.target.value);
-                  if (errors.thematicSection) {
-                    setErrors((prev) => {
-                      const next = { ...prev };
-                      delete next.thematicSection;
-                      return next;
-                    });
-                  }
-                }}
-                className="w-full bg-[#111111] text-white p-4 sm:p-5 text-base sm:text-lg font-bold cursor-pointer focus-visible:outline-none focus:ring-2 focus:ring-white appearance-none"
-              >
-                {THEMATIC_SECTIONS.map((sec) => (
-                  <option key={sec.id} value={sec.label} className="bg-[#111111] text-white py-3">
-                    {sec.label}
-                  </option>
-                ))}
-              </select>
-
-              {/* Dropdown Chevron */}
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                  <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                </svg>
-              </div>
-            </div>
-
-            <p className={`text-xs ${currentTheme.helper} font-medium`}>
-              {t.form.thematicHelper}
-            </p>
-
-            {errors.thematicSection && (
-              <div className="bg-white text-black px-3 py-2 text-xs font-bold flex items-center space-x-2 shadow">
-                <span className="w-2 h-2 bg-[#FB5616] inline-block" />
-                <span>{errors.thematicSection}</span>
-              </div>
-            )}
-          </div>
-
           {/* STEP 1: PHOTO UPLOAD */}
-          <div id="field-image" className={`space-y-3 pt-6 border-t ${currentTheme.divider}`}>
+          <div id="field-image" className="space-y-3">
             <div className="flex items-center justify-between">
               <label className={`text-xs mplus-metadata font-black ${currentTheme.label} flex items-center space-x-2`}>
                 <span className={`w-2 h-2 ${currentTheme.dot} inline-block`} />

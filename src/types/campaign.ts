@@ -22,7 +22,7 @@ export interface CountryCodeOption {
 export interface SubmissionRecord {
   submissionId: string;
   fullName: string;
-  thematicSection: string;
+  thematicSection?: string;
   imageName: string;
   imageSize: number;
   imageDimensions: {
