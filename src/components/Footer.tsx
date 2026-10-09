@@ -64,10 +64,10 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="mailto:mplusmoments@mplus.org.hk"
+                  href="mailto:Marcom@mplus.org.hk"
                   className="hover:text-white transition-colors focus-visible:outline-none hover:underline"
                 >
-                  {t.footer.contactLink} (mplusmoments@mplus.org.hk)
+                  {t.footer.contactLink} (Marcom@mplus.org.hk)
                 </a>
               </li>
               <li>
