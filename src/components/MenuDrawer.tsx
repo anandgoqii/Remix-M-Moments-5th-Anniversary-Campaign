@@ -212,7 +212,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
             </div>
           </div>
 
-          <div className="text-[11px] font-mono text-white/50 pt-2 border-t border-white/10">
+          <div className="text-[11px] text-white/50 pt-2 border-t border-white/10">
             M+ Museum · West Kowloon Cultural District, Hong Kong
           </div>
         </div>

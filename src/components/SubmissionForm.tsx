@@ -350,7 +350,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
               <label className={`text-xs mplus-metadata font-black ${currentTheme.label} flex items-center space-x-2`}>
                 <span className={`w-2 h-2 ${currentTheme.dot} inline-block`} />
                 <span>{t.form.photoLabel}</span>
-                <span className="font-mono text-sm">*</span>
+                <span className="text-sm font-bold">*</span>
               </label>
               <span className={`text-xs mplus-metadata ${currentTheme.metaStrip} font-bold`}>
                 2100×1256px (1.67:1) · max 15MB
@@ -384,7 +384,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
               <label htmlFor="message-input" className={`text-xs mplus-metadata font-black ${currentTheme.label} flex items-center space-x-2`}>
                 <span className={`w-2 h-2 ${currentTheme.dot} inline-block`} />
                 <span>{t.form.messageLabel}</span>
-                <span className="font-mono text-sm">*</span>
+                <span className="text-sm font-bold">*</span>
               </label>
               <span
                 className={`text-xs mplus-metadata font-bold ${
@@ -431,7 +431,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
                 <label htmlFor="name-input" className={`text-xs mplus-metadata font-black ${currentTheme.label} flex items-center space-x-2`}>
                   <span className={`w-2 h-2 ${currentTheme.dot} inline-block`} />
                   <span>{t.form.nameLabel}</span>
-                  <span className="font-mono text-sm">*</span>
+                  <span className="text-sm font-bold">*</span>
                 </label>
                 <span className={`text-xs mplus-metadata ${currentTheme.metaStrip} font-bold`}>
                   Mandatory
@@ -470,7 +470,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
                 <label htmlFor="mobile-input" className={`text-xs mplus-metadata font-black ${currentTheme.label} flex items-center space-x-2`}>
                   <span className={`w-2 h-2 ${currentTheme.dot} inline-block`} />
                   <span>{t.form.mobileLabel}</span>
-                  <span className="font-mono text-sm">*</span>
+                  <span className="text-sm font-bold">*</span>
                 </label>
                 {phoneVerified && (
                   <span className="text-xs mplus-metadata font-black bg-white text-black px-2.5 py-1 flex items-center space-x-1 shadow">

@@ -169,7 +169,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({
             <span className="w-2 h-2 bg-[#FB5616] inline-block" />
             <span>M+ FACADE SECTION: 1256 × 1200 PX</span>
           </span>
-          <span className="text-white/60 font-mono">
+          <span className="text-white/60 font-bold">
             {Math.round(scale * 100)}% ZOOM
           </span>
         </div>
@@ -282,7 +282,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({
               {t.form.dragHint}
             </span>
           </span>
-          <span className="text-[11px] text-white/50 font-mono hidden sm:inline">
+          <span className="text-[11px] text-white/50 font-bold hidden sm:inline">
             1256x1200 Section
           </span>
         </div>
@@ -326,7 +326,7 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({
             >
               +
             </button>
-            <span className="text-xs font-mono font-bold text-black min-w-[42px]">
+            <span className="text-xs font-bold text-black min-w-[42px]">
               {Math.round(scale * 100)}%
             </span>
           </div>

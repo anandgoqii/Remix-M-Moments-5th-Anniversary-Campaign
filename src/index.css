@@ -10,18 +10,14 @@
   --mplus-border-light: rgba(255, 255, 255, 0.25);
   --mplus-border-solid: #FFFFFF;
 
-  /* M+ Official Typography System Tokens */
-  /* Display Stack: Priority to M+ official brand font 'Simplistic' / 'Simplistic Digits and Latin' */
-  --font-display: 'Simplistic', 'Simplistic Digits and Latin', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  /* Unified M+ Official Typography System Tokens */
+  /* Consistent font face across all sections: M+ Official Brand Font 'Simplistic' + Noto Sans TC / SC pairing */
+  --font-unified: 'Simplistic', 'Simplistic Digits and Latin', 'Noto Sans TC', 'Noto Sans SC', 'PingFang TC', 'PingFang SC', 'Hiragino Sans TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-  /* Body Stack: Neutral, balanced contemporary museum reading sans-serif */
-  --font-body: 'Simplistic Digits and Latin', 'Simplistic', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-
-  /* Traditional Chinese Stack: Official M+ Noto Sans TC pairing */
-  --font-chinese: 'Noto Sans TC', 'PingFang TC', 'Hiragino Sans TC', 'Microsoft JhengHei', 'Heiti TC', sans-serif;
-
-  /* Monospace / Metadata Stack */
-  --font-mono: ui-monospace, 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: var(--font-unified);
+  --font-body: var(--font-unified);
+  --font-chinese: 'Noto Sans TC', 'Noto Sans SC', 'PingFang TC', 'PingFang SC', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+  --font-mono: var(--font-unified);
 }
 
 /* Official M+ Website 'Simplistic' Webfont Declarations */
@@ -90,11 +86,17 @@ body,
 }
 
 body {
-  font-family: var(--font-body), var(--font-chinese);
+  font-family: var(--font-unified);
   background-color: #000000;
   color: var(--mplus-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all typography elements strictly use the exact same unified font face */
+h1, h2, h3, h4, h5, h6,
+p, span, a, button, input, select, textarea, label {
+  font-family: var(--font-unified);
 }
 
 /* Traditional and Simplified Chinese active typography adjustments */
@@ -104,7 +106,7 @@ body {
 .lang-sc,
 [lang="zh-Hans"],
 [lang="zh-Hant"] {
-  font-family: var(--font-body), var(--font-chinese);
+  font-family: var(--font-unified);
 }
 
 [lang="tc"] h1,
@@ -122,20 +124,20 @@ body {
 [lang="zh-Hans"] h1,
 [lang="zh-Hans"] h2,
 [lang="zh-Hans"] h3 {
-  font-family: var(--font-chinese), var(--font-display);
+  font-family: var(--font-unified);
   letter-spacing: -0.015em;
 }
 
-/* Latin Display Typography */
+/* Latin and Brand Display Typography */
 .mplus-display {
-  font-family: var(--font-display), var(--font-chinese);
-  letter-spacing: -0.03em;
+  font-family: var(--font-unified);
+  letter-spacing: -0.025em;
   line-height: 1.05;
 }
 
-/* Compact Institutional Metadata & Labels */
+/* Compact Institutional Metadata & Labels — strictly same font face */
 .mplus-metadata {
-  font-family: var(--font-mono);
+  font-family: var(--font-unified);
   letter-spacing: 0.03em;
 }
 
