@@ -141,7 +141,6 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Institutional Disclaimer */}
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs mplus-metadata text-white/70 font-medium gap-4">
           <div>{t.footer.rights}</div>
-          <div>WEST KOWLOON CULTURAL DISTRICT AUTHORITY · HONG KONG</div>
         </div>
 
       </div>

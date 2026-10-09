@@ -24,8 +24,8 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
   onOpenTerms,
   defaultTheme = 'orange',
 }) => {
-  // Theme state for form background (defaulting to M+ Signature Orange)
-  const [formTheme, setFormTheme] = useState<FormThemeColor>(defaultTheme);
+  // Theme for form background (defaulting to M+ Signature Orange)
+  const formTheme: FormThemeColor = defaultTheme;
 
   // State for image
   const [selectedImage, setSelectedImage] = useState<{
@@ -320,57 +320,12 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
   return (
     <section id="submission-section" className={`w-full max-w-full ${currentTheme.bg} ${currentTheme.text} border-b-2 border-black overflow-hidden transition-colors duration-300`}>
       {/* Section Header Strip */}
-      <div className="bg-black text-white px-3 sm:px-8 py-3.5 sm:py-5 flex flex-col md:flex-row justify-between items-start md:items-center text-xs mplus-metadata gap-2 overflow-hidden">
+      <div className="bg-black text-white px-3 sm:px-8 py-3.5 sm:py-5 flex items-center text-xs mplus-metadata overflow-hidden">
         <div className="flex items-center space-x-2">
           <span className="w-2 h-2 bg-[#FB5616] inline-block shrink-0" />
           <span className="font-bold">
             04 / Submission
           </span>
-        </div>
-
-        {/* Dynamic Canvas Color Selector */}
-        <div className="flex items-center space-x-2 text-[11px]">
-          <span className="text-white/60">
-            {currentLanguage === 'tc' ? '表單底色' : 'Form color'}:
-          </span>
-          <div className="inline-flex items-center space-x-1 bg-neutral-900 border border-neutral-700 p-0.5">
-            <button
-              type="button"
-              onClick={() => setFormTheme('orange')}
-              className={`px-2 py-0.5 font-bold transition-all ${
-                formTheme === 'orange' ? 'bg-[#FB5616] text-white' : 'text-neutral-400 hover:text-white'
-              }`}
-            >
-              Orange
-            </button>
-            <button
-              type="button"
-              onClick={() => setFormTheme('white')}
-              className={`px-2 py-0.5 font-bold transition-all ${
-                formTheme === 'white' ? 'bg-white text-black' : 'text-neutral-400 hover:text-white'
-              }`}
-            >
-              White
-            </button>
-            <button
-              type="button"
-              onClick={() => setFormTheme('dark')}
-              className={`px-2 py-0.5 font-bold transition-all ${
-                formTheme === 'dark' ? 'bg-neutral-800 text-white' : 'text-neutral-400 hover:text-white'
-              }`}
-            >
-              Dark
-            </button>
-            <button
-              type="button"
-              onClick={() => setFormTheme('blue')}
-              className={`px-2 py-0.5 font-bold transition-all ${
-                formTheme === 'blue' ? 'bg-[#11A1F0] text-white' : 'text-neutral-400 hover:text-white'
-              }`}
-            >
-              Blue
-            </button>
-          </div>
         </div>
       </div>
 
