@@ -31,11 +31,6 @@ export const CampaignIntro: React.FC<CampaignIntroProps> = ({ t, currentLanguage
           
           {/* Left Column: Massive Editorial Typography */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
-            <div className="inline-flex items-center space-x-2 text-xs mplus-metadata tracking-widest text-white/90 font-black border border-white/40 px-3 py-1 bg-black/10">
-              <span className="w-2 h-2 bg-white" />
-              <span>{t.intro.kicker}</span>
-            </div>
-
             <h2 className="mplus-display text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tight whitespace-pre-line">
               {t.intro.headline}
             </h2>

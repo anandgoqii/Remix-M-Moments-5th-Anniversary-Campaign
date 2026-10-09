@@ -352,7 +352,7 @@ export const translations: Record<Language, Translations> = {
     nav: {
       title: 'M+ 五周年',
       anniversaryBadge: '開館五周年 · 2026年11月12日',
-      shareCta: '分享您的回憶',
+      shareCta: '分享你的回憶',
       aboutLink: '活動簡介',
       howItWorksLink: '參與流程',
       timelineLink: '日程',
@@ -525,7 +525,7 @@ export const translations: Record<Language, Translations> = {
     nav: {
       title: 'M+ 五周年',
       anniversaryBadge: '开馆五周年 · 2026年11月12日',
-      shareCta: '分享您的回忆',
+      shareCta: '分享你的回忆',
       aboutLink: '活动简介',
       howItWorksLink: '参与流程',
       timelineLink: '日程',
