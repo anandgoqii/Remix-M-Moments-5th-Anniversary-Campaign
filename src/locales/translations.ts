@@ -56,6 +56,9 @@ export interface Translations {
     milestone3Date: string;
     milestone3Title: string;
     milestone3Desc: string;
+    milestone4Date: string;
+    milestone4Title: string;
+    milestone4Desc: string;
   };
   form: {
     sectionTitle: string;
@@ -228,9 +231,12 @@ export const translations: Record<Language, Translations> = {
       milestone2Date: '2 — 5 Nov 2026',
       milestone2Title: 'Submission Selection',
       milestone2Desc: 'M+ will conduct a compliance review, image-quality check, and curatorial selection of all submissions.',
-      milestone3Date: '12 November 2026',
-      milestone3Title: 'Celebrate',
-      milestone3Desc: 'Selected photographs may be displayed on the M+ Facade during the anniversary celebration.',
+      milestone3Date: '6 — 10 Nov 2026',
+      milestone3Title: 'Featured Participant Notification',
+      milestone3Desc: 'Selected participants will be contacted directly regarding the display of their submissions on the M+ Facade.',
+      milestone4Date: '12 November 2026',
+      milestone4Title: 'Celebrate',
+      milestone4Desc: 'Selected photographs may be displayed on the M+ Facade during the anniversary celebration.',
     },
     form: {
       sectionTitle: 'Share your M+ Moment',
@@ -401,9 +407,12 @@ export const translations: Record<Language, Translations> = {
       milestone2Date: '2026年11月2日 — 5日',
       milestone2Title: '投稿遴選',
       milestone2Desc: '由M+進行合規審核、影像畫質檢測及策展遴選。',
-      milestone3Date: '2026年11月12日',
-      milestone3Title: '慶祝',
-      milestone3Desc: '精選公眾回憶將於M+幕牆特別展出，與全城共慶五周年。',
+      milestone3Date: '2026年11月6日 — 10日',
+      milestone3Title: '精選參與者通知',
+      milestone3Desc: '獲選參與者將收到直接通知，有關其投稿於M+幕牆展出的安排。',
+      milestone4Date: '2026年11月12日',
+      milestone4Title: '慶祝',
+      milestone4Desc: '精選公眾回憶將於M+幕牆特別展出，與全城共慶五周年。',
     },
     form: {
       sectionTitle: '分享你的 M+ 瞬間',
@@ -574,9 +583,12 @@ export const translations: Record<Language, Translations> = {
       milestone2Date: '2026年11月2日 — 5日',
       milestone2Title: '投稿遴选',
       milestone2Desc: '由M+进行合规审核、影像画质检测及策展遴选。',
-      milestone3Date: '2026年11月12日',
-      milestone3Title: '庆祝',
-      milestone3Desc: '精选公众回忆将于M+幕墙特别展出，与全城共庆五周年。',
+      milestone3Date: '2026年11月6日 — 10日',
+      milestone3Title: '精选参与者通知',
+      milestone3Desc: '获选参与者将收到直接通知，有关其投稿于M+幕墙展出的安排。',
+      milestone4Date: '2026年11月12日',
+      milestone4Title: '庆祝',
+      milestone4Desc: '精选公众回忆将于M+幕墙特别展出，与全城共庆五周年。',
     },
     form: {
       sectionTitle: '分享你的 M+ 瞬间',

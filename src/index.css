@@ -5,6 +5,7 @@
   --mplus-orange: #FB5616;
   --mplus-pink: #F75388;
   --mplus-blue: #11A1F0;
+  --mplus-green: #2EA846;
   --mplus-white: #FFFFFF;
   --mplus-black: #111111;
   --mplus-border-light: rgba(255, 255, 255, 0.25);
@@ -163,16 +164,19 @@ p, span, a, button, input, select, textarea, label {
 .bg-mplus-orange { background-color: var(--mplus-orange); }
 .bg-mplus-pink { background-color: var(--mplus-pink); }
 .bg-mplus-blue { background-color: var(--mplus-blue); }
+.bg-mplus-green { background-color: var(--mplus-green); }
 .bg-mplus-white { background-color: var(--mplus-white); }
 .bg-mplus-black { background-color: var(--mplus-black); }
 
 .text-mplus-orange { color: var(--mplus-orange); }
 .text-mplus-pink { color: var(--mplus-pink); }
 .text-mplus-blue { color: var(--mplus-blue); }
+.text-mplus-green { color: var(--mplus-green); }
 
 .border-mplus-orange { border-color: var(--mplus-orange); }
 .border-mplus-pink { border-color: var(--mplus-pink); }
 .border-mplus-blue { border-color: var(--mplus-blue); }
+.border-mplus-green { border-color: var(--mplus-green); }
 
 /* Custom scrollbar for clean institutional aesthetic */
 ::-webkit-scrollbar {

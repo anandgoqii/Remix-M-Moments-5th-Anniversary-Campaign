@@ -21,12 +21,19 @@ export const Timeline: React.FC<TimelineProps> = ({ t }) => {
       title: t.timeline.milestone2Title,
       desc: t.timeline.milestone2Desc,
       bg: 'bg-[#FB5616]',
-      badge: 'UPCOMING',
+      badge: 'SELECTION',
     },
     {
       date: t.timeline.milestone3Date,
       title: t.timeline.milestone3Title,
       desc: t.timeline.milestone3Desc,
+      bg: 'bg-[#2EA846]',
+      badge: 'NOTIFICATION',
+    },
+    {
+      date: t.timeline.milestone4Date,
+      title: t.timeline.milestone4Title,
+      desc: t.timeline.milestone4Desc,
       bg: 'bg-[#F75388]',
       badge: 'FINALE · 5TH ANNIVERSARY',
     },
@@ -47,17 +54,17 @@ export const Timeline: React.FC<TimelineProps> = ({ t }) => {
         </div>
       </div>
 
-      {/* Colour-Blocked Timeline: Horizontal on Desktop, Vertical on Mobile */}
-      <div className="grid grid-cols-1 lg:grid-cols-3">
+      {/* Colour-Blocked Timeline: 4 Stages on Desktop, 2 on Tablet, Stacked on Mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {milestones.map((item, index) => (
           <div
             key={index}
-            className={`${item.bg} text-white p-6 sm:p-10 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/30 last:border-r-0`}
+            className={`${item.bg} text-white p-6 sm:p-8 lg:p-7 xl:p-9 flex flex-col justify-between border-b lg:border-b-0 border-white/25 lg:border-r last:border-r-0`}
           >
             <div>
               {/* Stage Badge & Node */}
               <div className="flex items-center justify-between mb-6">
-                <span className="text-xs mplus-metadata font-bold text-white/80 bg-black/10 px-2.5 py-1">
+                <span className="text-xs mplus-metadata font-bold text-white/80 bg-black/20 px-2.5 py-1">
                   Stage 0{index + 1}
                 </span>
 
@@ -67,17 +74,17 @@ export const Timeline: React.FC<TimelineProps> = ({ t }) => {
               </div>
 
               {/* Milestone Date */}
-              <div className="text-xl sm:text-2xl font-black mplus-display tracking-tight text-white mb-2">
+              <div className="text-lg sm:text-xl font-black mplus-display tracking-tight text-white mb-2">
                 {item.date}
               </div>
 
               {/* Milestone Title in Sentence Case */}
-              <h3 className="text-2xl sm:text-3xl font-black mplus-display tracking-tight mb-3">
+              <h3 className="text-xl sm:text-2xl font-black mplus-display tracking-tight mb-3">
                 {item.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm sm:text-base font-medium text-white/95 leading-relaxed">
+              <p className="text-sm font-medium text-white/95 leading-relaxed">
                 {item.desc}
               </p>
             </div>
