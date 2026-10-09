@@ -28,7 +28,13 @@ export default function App() {
 
   const handleLanguageChange = (newLang: Language) => {
     setLanguage(newLang);
-    document.documentElement.lang = newLang === 'tc' ? 'zh-Hant-HK' : 'en-HK';
+    if (newLang === 'tc') {
+      document.documentElement.lang = 'zh-Hant-HK';
+    } else if (newLang === 'sc') {
+      document.documentElement.lang = 'zh-Hans-CN';
+    } else {
+      document.documentElement.lang = 'en-HK';
+    }
   };
 
   const handleScrollToForm = () => {
@@ -63,9 +69,9 @@ export default function App() {
 
   return (
     <div
-      lang={language === 'tc' ? 'zh-Hant' : 'en'}
+      lang={language === 'tc' ? 'zh-Hant' : language === 'sc' ? 'zh-Hans' : 'en'}
       className={`min-h-screen w-full max-w-full overflow-x-clip bg-white text-[#111111] flex flex-col selection:bg-[#FB5616] selection:text-white ${
-        language === 'tc' ? 'lang-tc' : ''
+        language === 'tc' ? 'lang-tc' : language === 'sc' ? 'lang-sc' : ''
       }`}
     >
       {/* Header */}

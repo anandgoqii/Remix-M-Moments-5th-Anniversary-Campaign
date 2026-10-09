@@ -1,4 +1,4 @@
-export type Language = 'en' | 'tc';
+export type Language = 'en' | 'tc' | 'sc';
 
 export interface CampaignConfig {
   campaignStartDate: string;
@@ -17,6 +17,7 @@ export interface CountryCodeOption {
   dialCode: string;
   nameEn: string;
   nameTc: string;
+  nameSc?: string;
 }
 
 export interface SubmissionRecord {

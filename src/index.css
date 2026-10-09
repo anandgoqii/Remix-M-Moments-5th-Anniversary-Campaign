@@ -97,9 +97,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Traditional Chinese active typography adjustments */
+/* Traditional and Simplified Chinese active typography adjustments */
 [lang="tc"],
-.lang-tc {
+.lang-tc,
+[lang="sc"],
+.lang-sc,
+[lang="zh-Hans"],
+[lang="zh-Hant"] {
   font-family: var(--font-body), var(--font-chinese);
 }
 
@@ -108,7 +112,16 @@ body {
 [lang="tc"] h3,
 .lang-tc h1,
 .lang-tc h2,
-.lang-tc h3 {
+.lang-tc h3,
+[lang="sc"] h1,
+[lang="sc"] h2,
+[lang="sc"] h3,
+.lang-sc h1,
+.lang-sc h2,
+.lang-sc h3,
+[lang="zh-Hans"] h1,
+[lang="zh-Hans"] h2,
+[lang="zh-Hans"] h3 {
   font-family: var(--font-chinese), var(--font-display);
   letter-spacing: -0.015em;
 }

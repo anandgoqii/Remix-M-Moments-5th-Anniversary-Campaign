@@ -15,12 +15,12 @@ export const TermsModal: React.FC<TermsModalProps> = ({
   t,
   currentLanguage = 'en',
 }) => {
-  const [modalLang, setModalLang] = useState<'en' | 'tc'>(currentLanguage === 'tc' ? 'tc' : 'en');
+  const [modalLang, setModalLang] = useState<Language>(currentLanguage);
 
   // Keep modal language in sync with app language when opened
   useEffect(() => {
     if (isOpen) {
-      setModalLang(currentLanguage === 'tc' ? 'tc' : 'en');
+      setModalLang(currentLanguage);
     }
   }, [isOpen, currentLanguage]);
 
@@ -55,6 +55,8 @@ export const TermsModal: React.FC<TermsModalProps> = ({
             <h3 id="terms-modal-title" className="text-sm sm:text-base font-black mplus-display tracking-tight text-white truncate">
               {modalLang === 'tc'
                 ? 'M+ 五周年幕牆活動 — 條款及細則'
+                : modalLang === 'sc'
+                ? 'M+ 五周年幕墙活动 — 条款及细则'
                 : 'M+ 5th Anniversary "Be In The Frame" Facade Campaign — Terms & Conditions'}
             </h3>
           </div>
@@ -82,8 +84,22 @@ export const TermsModal: React.FC<TermsModalProps> = ({
                     ? 'bg-white text-black font-black'
                     : 'text-white hover:bg-white/20'
                 }`}
+                title="繁體中文"
               >
                 繁中
+              </button>
+              <span className="text-white/40">|</span>
+              <button
+                type="button"
+                onClick={() => setModalLang('sc')}
+                className={`px-2.5 py-1 transition-colors ${
+                  modalLang === 'sc'
+                    ? 'bg-white text-black font-black'
+                    : 'text-white hover:bg-white/20'
+                }`}
+                title="简体中文"
+              >
+                简中
               </button>
             </div>
 
@@ -100,7 +116,133 @@ export const TermsModal: React.FC<TermsModalProps> = ({
 
         {/* Modal Body - Verbatim Legal Copy */}
         <div className="p-5 sm:p-8 overflow-y-auto space-y-6 text-sm text-neutral-900 leading-relaxed font-sans">
-          {modalLang === 'tc' ? (
+          {modalLang === 'sc' ? (
+            /* ================= SIMPLIFIED CHINESE VERSION ================= */
+            <div className="space-y-6 text-neutral-800">
+              <div>
+                <h2 className="text-lg sm:text-xl font-black text-black pb-2 border-b-2 border-black mb-4">
+                  M+ 五周年幕墙活动 — 条款及细则
+                </h2>
+              </div>
+
+              {/* Section 1 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">1. 概述及主办机构</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  1.1 “M+ 五周年幕墙活动”（简称“本活动”）由 M Plus 博物馆有限公司（简称“M+”或“主办机构”）主办。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  1.2 参与本活动即代表参加者（简称“参加者”）同意受本条款及细则（简称“条款及细则”）以及本文载明的私隐声明／收集个人资料声明所约束。
+                </p>
+              </section>
+
+              {/* Section 2 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">2. 活动期间及递交机制</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  2.1 递交期由 2026 年 10 月 19 日上午 10 时 00 分（香港时间）开始，至 2026 年 11 月 1日下午 6 时 00 分（香港时间）结束（简称“递交期”）。逾期或不完整的递交将不获受理。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  2.2 参加者须于递交期内通过指定活动网站递交作品以作参赛，步骤如下：
+                </p>
+                <ul className="list-disc pl-5 space-y-1 text-xs sm:text-sm text-neutral-700">
+                  <li>上传一（1）张捕捉其过去五年内在 M+ 最喜爱回忆的照片（简称“照片”）；</li>
+                  <li>递交一段简短描述或感言以解释该回忆（简称“感言”）；及</li>
+                  <li>提供有效的联络资料（电子邮件地址及／或电话号码）。</li>
+                </ul>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  2.3 每位参加者可递交多份作品，惟每份作品必须为独特之作。每位参加者最多仅可获选／获奖一次。
+                </p>
+              </section>
+
+              {/* Section 3 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">3. 参加资格</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  3.1 本活动开放予任何年龄人士参加；未成年人须取得父母或监护人同意。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  3.2 M+、西九文化区管理局及其各自的子公司、附属公司、广告及推广代理机构之员工、干事及承包商均合资格参加。
+                </p>
+              </section>
+
+              {/* Section 4 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">4. 内容指引、第三者权利及同意</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  4.1 参加者递交照片及感言（合称“递交作品”），即保证及声明：
+                </p>
+                <ul className="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-neutral-700">
+                  <li>递交作品为其本人之原创作品，且并无侵犯任何人士或实体之版权、商标权、私隐权、公开权或任何其他专有权利；</li>
+                  <li>作品并不包含任何不适当、诽谤、色情、侵权、具冒犯性或非法的材料；</li>
+                  <li>如照片中包含任何可识别个人身份的人士，参加者已取得该等人士（如为未成年人，则其父母／监护人）的事先明确同意。</li>
+                </ul>
+              </section>
+
+              {/* Section 5 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">5. 知识产权及授权</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  5.1 参加者保留其递交作品的版权所有权。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  5.2 参加者向 M+ 授予全球性、不可撤回、免版税、非独占且可转授的许可，允许其于 M+ 幕墙、社交媒体及官方宣传中展示、修改及宣传该作品。
+                </p>
+              </section>
+
+              {/* Section 6 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">6. 甄选、评审及展出</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  6.1 递交作品并不保证会被展示。所有作品将由 M+ 策展团队依据创意、叙事能力及技术画质进行独立评审。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  6.2 入选作品计划于 2026 年 11 月 12 日在 M+ 幕墙展示。
+                </p>
+              </section>
+
+              {/* Section 7 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">7. 责任限制及免责</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  7.1 M+ 对因参与本活动或因技术故障而导致的任何直接、间接损失概不负责。
+                </p>
+              </section>
+
+              {/* Section 8 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">8. 不可抗力及活动变更</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  8.1 如遇恶劣天气（例如八号台风信号或黑色暴雨警告）或技术故障，M+ 保留调整或取消幕墙展示的权利。
+                </p>
+              </section>
+
+              {/* Section 9 */}
+              <section id="modal-pics" className="space-y-2 bg-neutral-50 p-4 border border-neutral-300">
+                <h4 className="font-black text-base text-black">9. 收集个人资料声明（PICS）／私隐声明</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  9.1 收集资料的目的：参加者提供的个人资料（包括电子邮件地址、电话号码及姓名）将由 M+ 收集及处理，用于管理本活动、核实资格及联络入选者。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  9.2 个人资料绝不会出售或披露予未经授权的第三方。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  9.3 参加者有权要求查阅、更正或删除 M+ 所持有的个人资料，可发送请求至 Marcom@mplus.org.hk。
+                </p>
+              </section>
+
+              {/* Section 10 */}
+              <section className="space-y-2">
+                <h4 className="font-black text-base text-black">10. 一般条款</h4>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  10.1 M+ 保留随时取消、暂停或修订本活动或本条款及细则的权利。如本条款及细则有任何争议，M+ 保留最终决定权。
+                </p>
+                <p className="text-xs sm:text-sm leading-relaxed">
+                  10.2 本条款及细则受香港特别行政区法律管辖并按其解释。
+                </p>
+              </section>
+            </div>
+          ) : modalLang === 'tc' ? (
             /* ================= TRADITIONAL CHINESE VERSION ================= */
             <div className="space-y-6 text-neutral-800">
               <div>
@@ -459,7 +601,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({
             onClick={onClose}
             className="px-6 py-2.5 bg-black text-white text-xs font-black tracking-wider hover:bg-[#FB5616] transition-colors focus-visible:outline-none cursor-pointer"
           >
-            {modalLang === 'tc' ? '關閉' : 'Close'}
+            {modalLang === 'tc' ? '關閉' : modalLang === 'sc' ? '关闭' : 'Close'}
           </button>
         </div>
       </div>

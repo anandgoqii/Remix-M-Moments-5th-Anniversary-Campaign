@@ -79,7 +79,7 @@ export const Hero: React.FC<HeroProps> = ({ t, currentLanguage, onCtaClick, isCl
               </button>
             ) : (
               <div className="min-h-[50px] px-6 py-3.5 bg-white/20 text-white font-bold text-xs text-center mplus-metadata border border-white/40">
-                {currentLanguage === 'tc' ? '徵集活動已截止' : 'Submissions closed'}
+                {currentLanguage === 'tc' ? '徵集活動已截止' : currentLanguage === 'sc' ? '征集活动已截止' : 'Submissions closed'}
               </div>
             )}
 

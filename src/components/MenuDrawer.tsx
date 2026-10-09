@@ -62,7 +62,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
               <MPlusLogo className="h-6 w-auto text-white" />
               <span className="h-4 w-px bg-white/40 mx-1" />
               <span className="text-xs mplus-metadata text-white/80 font-bold">
-                {currentLanguage === 'tc' ? '五周年' : '5th Anniversary'}
+                {currentLanguage !== 'en' ? '五周年' : '5th Anniversary'}
               </span>
             </div>
 
@@ -87,7 +87,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
           <nav className="space-y-6 pt-4">
             <div>
               <div className="text-[11px] mplus-metadata text-[#FB5616] font-bold mb-3 tracking-wider">
-                01 / {currentLanguage === 'tc' ? '活動專頁' : 'CAMPAIGN'}
+                01 / {currentLanguage === 'tc' ? '活動專頁' : currentLanguage === 'sc' ? '活动专页' : 'CAMPAIGN'}
               </div>
               <ul className="space-y-3 text-base text-white/90">
                 <li>
@@ -169,7 +169,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
         <div className="pt-6 border-t border-white/20 space-y-4">
           <div className="flex items-center justify-between">
             <span className="text-xs mplus-metadata text-white/60 font-bold">
-              {currentLanguage === 'tc' ? '語言' : 'LANGUAGE'}
+              {currentLanguage === 'tc' ? '語言' : currentLanguage === 'sc' ? '语言' : 'LANGUAGE'}
             </span>
             <div className="flex items-center border border-white/60 bg-black/20 text-xs font-bold">
               <button
@@ -192,8 +192,22 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
                     ? 'bg-white text-black font-black'
                     : 'text-white hover:bg-white/20'
                 }`}
+                title="繁體中文"
               >
                 繁中
+              </button>
+              <span className="text-white/40">|</span>
+              <button
+                type="button"
+                onClick={() => onLanguageChange('sc')}
+                className={`px-3 py-1.5 transition-colors ${
+                  currentLanguage === 'sc'
+                    ? 'bg-white text-black font-black'
+                    : 'text-white hover:bg-white/20'
+                }`}
+                title="简体中文"
+              >
+                简中
               </button>
             </div>
           </div>

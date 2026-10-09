@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({
               <MPlusLogo className="h-8 w-auto text-white" />
               <span className="h-6 w-px bg-white/40 mx-2" aria-hidden="true" />
               <span className="text-xs mplus-metadata font-bold text-white">
-                {currentLanguage === 'tc' ? '五周年誌慶' : '5th Anniversary'}
+                {currentLanguage === 'tc' ? '五周年誌慶' : currentLanguage === 'sc' ? '五周年志庆' : '5th Anniversary'}
               </span>
             </div>
 
@@ -50,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 2: Legal & Institutional Navigation */}
           <div className="md:col-span-4 space-y-3">
             <div className="text-xs mplus-metadata font-bold text-white mb-4">
-              {currentLanguage === 'tc' ? '活動章程與政策' : 'Campaign policies'}
+              {currentLanguage === 'tc' ? '活動章程與政策' : currentLanguage === 'sc' ? '活动章程与政策' : 'Campaign policies'}
             </div>
             <ul className="space-y-2.5 text-white/80 font-medium">
               <li>
@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors inline-flex items-center space-x-1 focus-visible:outline-none font-bold text-white hover:underline"
                 >
-                  <span>{currentLanguage === 'tc' ? 'M+ 官方網站' : 'M+ Official website'}</span>
+                  <span>{currentLanguage === 'tc' ? 'M+ 官方網站' : currentLanguage === 'sc' ? 'M+ 官方网站' : 'M+ Official website'}</span>
                   <span aria-hidden="true">↗</span>
                 </a>
               </li>
@@ -87,10 +87,10 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 3: Language & Administrative Preview Switch */}
           <div className="md:col-span-3 space-y-4">
             <div className="text-xs mplus-metadata font-bold text-white mb-4">
-              {currentLanguage === 'tc' ? '語言選擇' : 'Language'}
+              {currentLanguage === 'tc' ? '語言選擇' : currentLanguage === 'sc' ? '语言选择' : 'Language'}
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
                 onClick={() => onLanguageChange('en')}
@@ -112,6 +112,17 @@ export const Footer: React.FC<FooterProps> = ({
                 }`}
               >
                 繁體中文
+              </button>
+              <button
+                type="button"
+                onClick={() => onLanguageChange('sc')}
+                className={`px-3 py-1.5 text-xs font-bold border-2 ${
+                  currentLanguage === 'sc'
+                    ? 'border-white bg-white text-black'
+                    : 'border-white/40 text-white hover:border-white'
+                }`}
+              >
+                简体中文
               </button>
             </div>
 

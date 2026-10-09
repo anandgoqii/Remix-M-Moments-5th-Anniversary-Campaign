@@ -77,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({
               <span className="h-3.5 sm:h-5 w-px bg-white/40 shrink-0" aria-hidden="true" />
 
               <span className="hidden min-[360px]:inline text-[11px] sm:text-xs md:text-sm mplus-metadata font-black tracking-wide text-white leading-none whitespace-nowrap">
-                {currentLanguage === 'tc' ? '五周年' : '5th Anniversary'}
+                {currentLanguage !== 'en' ? '五周年' : '5th Anniversary'}
               </span>
             </a>
           </div>
@@ -109,7 +109,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Right: Actions (Language Switcher, CTA & Mobile Hamburger) */}
           <div className="flex items-center space-x-1.5 sm:space-x-3 shrink-0">
-            {/* Language Switch: EN | 繁中 */}
+            {/* Language Switch: EN | 繁中 | 简中 */}
             <div
               className="flex items-center border border-white/60 bg-black/10 text-[11px] sm:text-xs font-bold shrink-0"
               role="group"
@@ -137,8 +137,23 @@ export const Header: React.FC<HeaderProps> = ({
                     : 'text-white hover:bg-white/20'
                 }`}
                 aria-pressed={currentLanguage === 'tc'}
+                title="繁體中文"
               >
                 繁中
+              </button>
+              <span className="text-white/40 text-[10px]" aria-hidden="true">|</span>
+              <button
+                type="button"
+                onClick={() => onLanguageChange('sc')}
+                className={`min-h-[30px] sm:min-h-[36px] px-2 sm:px-2.5 transition-colors text-[11px] sm:text-xs font-bold ${
+                  currentLanguage === 'sc'
+                    ? 'bg-white text-black font-black'
+                    : 'text-white hover:bg-white/20'
+                }`}
+                aria-pressed={currentLanguage === 'sc'}
+                title="简体中文"
+              >
+                简中
               </button>
             </div>
 
@@ -150,7 +165,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className="min-h-[30px] sm:min-h-[36px] px-2.5 sm:px-5 py-1 bg-white hover:bg-black hover:text-white text-black text-[11px] sm:text-xs font-black transition-colors whitespace-nowrap focus-visible:outline-none shrink-0 shadow-sm cursor-pointer border border-white"
               >
                 <span className="hidden sm:inline">{t.nav.shareCta}</span>
-                <span className="sm:hidden">{currentLanguage === 'tc' ? '分享' : 'Share'}</span>
+                <span className="sm:hidden">{currentLanguage !== 'en' ? '分享' : 'Share'}</span>
               </button>
             ) : (
               <span className="text-[11px] sm:text-xs mplus-metadata text-white border border-white/40 px-2 sm:px-3 py-1 font-bold shrink-0">

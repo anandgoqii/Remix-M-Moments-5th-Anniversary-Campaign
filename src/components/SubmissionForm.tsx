@@ -324,7 +324,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
         <div className="flex items-center space-x-2">
           <span className="w-2 h-2 bg-[#FB5616] inline-block shrink-0" />
           <span className="font-bold">
-            04 / Submission
+            {currentLanguage !== 'en' ? '04 / 提交作品' : '04 / Submission'}
           </span>
         </div>
       </div>
@@ -655,6 +655,8 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
               <p className={`text-xs ${currentTheme.helper} font-medium`}>
                 {currentLanguage === 'tc'
                   ? '如獲選或需要聯絡，我們亦可透過電郵向您發送紀念通知。'
+                  : currentLanguage === 'sc'
+                  ? '如获选或需要联络，我们亦可通过电子邮件向您发送纪念通知。'
                   : 'Used for optional campaign notifications if your moment is selected.'}
               </p>
 
@@ -673,7 +675,7 @@ export const SubmissionForm: React.FC<SubmissionFormProps> = ({
             <div className={`text-xs mplus-metadata font-black ${currentTheme.label} mb-2 flex items-center space-x-2`}>
               <span className={`w-2 h-2 ${currentTheme.dot} inline-block`} />
               <span>
-                {currentLanguage === 'tc' ? '聲明與同意事項' : 'Consents & declarations'}
+                {currentLanguage === 'tc' ? '聲明與同意事項' : currentLanguage === 'sc' ? '声明与同意事项' : 'Consents & declarations'}
               </span>
             </div>
 
