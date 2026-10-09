@@ -227,7 +227,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({
                   9.2 个人资料绝不会出售或披露予未经授权的第三方。
                 </p>
                 <p className="text-xs sm:text-sm leading-relaxed">
-                  9.3 参加者有权要求查阅、更正或删除 M+ 所持有的个人资料，可发送请求至 Marcom@mplus.org.hk。
+                  9.3 参加者有权要求查阅、更正或删除 M+ 所持有的个人资料，可发送请求至 marcom@mplus.org.hk。
                 </p>
               </section>
 
